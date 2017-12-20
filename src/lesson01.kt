@@ -1,3 +1,6 @@
+import com.sun.org.apache.bcel.internal.generic.INSTANCEOF
+import java.util.*
+
 /**
  * lesson01 基本语法
  */
@@ -12,6 +15,14 @@ fun main(args: Array<String>) {
     println("空返回的函数: ")
     func03(2, 3)
     func03Void(5, 6)
+
+    /**
+     * 变量
+     * val, var
+     */
+    val a: Int = 1    // 立即赋值
+    val b = 2           // 自动推导
+    val c:Int           // 未初始化的值, 类型不能忽略
 }
 
 /**
@@ -34,8 +45,3 @@ fun func03(a: Int, b: Int): Unit {
 fun func03Void(a: Int, b: Int) {
     println(a + b)
 }
-
-/**
- * 变量
- * val, var
- */
