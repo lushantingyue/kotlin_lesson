@@ -1,7 +1,7 @@
 /**
  * lesson01 基本语法
  */
-//package my.demo // 定义包名
+package my.demo // 定义包名
 
 fun main(args: Array<String>) {
     println("hello world.\n")
@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
      */
     val a: Int = 1    // 立即赋值
     val b = 2           // 自动推断为Int类型
-    val c:Int           // 未初始化的值, 类型不能忽略
+    val c: Int           // 未初始化的值, 类型不能忽略
     c = 3                   // 明确赋值
     //c = 5   // 再次赋值会报错
 
