@@ -58,7 +58,10 @@ fun main(args: Array<String>) {
 
     /**
      * 类型检测及自动类型转换
+     * is 运算符检测一个表达式是否某类型的一个实例
      */
+    println("====== 类型检测 ======")
+    println("String Length:" + getStringLength("kotlin_lesson"))
 
     /**
      * for循环
@@ -169,6 +172,13 @@ fun func03Void(a: Int, b: Int) {
 // 返回值可为空
 fun parseInt(str: String): Int? {
     return str.toIntOrNull()
+}
+// is String判断类型
+fun getStringLength(obj: Any): Int? {
+    if (obj !is String) return null
+
+    // `obj` 在这一分支自动转换为 `String`
+    return obj.length
 }
 
 fun describe(obj: Any): String =
