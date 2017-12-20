@@ -45,10 +45,19 @@ fun main(args: Array<String>) {
 
     /**
      * 可空变量与空值检查
+     * 当某个变量可以为null时，必须声明类型后添加？来标识该引用可为空
      */
+    println("======= 可空变量与空值检查 ======")
+    var ab = "ab"
+    var cd = "12"
+    // fun parseInt(str: String): Int? 返回值可为null
+    var x2 = parseInt(ab)
+    var x3 = parseInt(cd)
+    println(x2)
+    println(x3)
 
     /**
-     * 使用值检查并自动转换
+     * 类型检测及自动类型转换
      */
 
     /**
@@ -78,7 +87,7 @@ fun main(args: Array<String>) {
     /**
      * when 表达式
      */
-    println("\nwhen表达式\n======")
+    println("\n" + "when表达式\n======")
     println(describe(1))
     println(describe("Hello"))
     println(describe(1000L))
