@@ -3,6 +3,8 @@
  */
 package my.demo // 定义包名
 
+import java.awt.Rectangle
+
 fun main(args: Array<String>) {
     println("hello world.\n")
     println("function output: " + sum(2, 3))
@@ -98,10 +100,10 @@ fun main(args: Array<String>) {
     println(describe("other"))
 
     /**
-     * ranges范围检查
+     * ranges区间操作
      * in操作符
      */
-    // 1.范围
+    // 1.范围检查
     println("\n"+"ranges操作\n======")
 
     println("\n"+"范围")
@@ -146,6 +148,15 @@ fun main(args: Array<String>) {
             .sortedBy { it }
             .map { it.toUpperCase() }
             .forEach { println(it)}
+
+    /**
+     * 创建基本类及其实例
+     * 不需要new关键字
+     */
+    var x11 = 5
+    var y11 = 2
+    val rectangle = Rectangle(x11,y11)
+    println("rectangle size: " + rectangle.size)
 }
 
 /**
