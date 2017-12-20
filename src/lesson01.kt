@@ -30,6 +30,10 @@ fun main(args: Array<String>) {
     println("var变量: " + x)
 
     /**
+     * 注释的使用： 与Java一样，多出了“块注释级联”
+     **/
+
+    /**
      * 字符串模板,类似于php和es6
      */
     var aa = 111
@@ -38,6 +42,98 @@ fun main(args: Array<String>) {
     println("字符串模板: " + s1)
     val s2 = "${s1.replace("is","was")},but now is $aa"
     println(s2)
+
+    /**
+     * 可空变量与空值检查
+     */
+
+    /**
+     * 使用值检查并自动转换
+     */
+
+    /**
+     * for循环
+     */
+    val items = listOf("apple","banana","kiwi")
+    println("循环01\n======")
+    for (item in items){
+        println(item)
+    }
+
+    println("循环02\n======")
+    for (index in items.indices){
+        println("item at $index is ${items[index]}")
+    }
+
+    /**
+     * while循环
+     */
+    println("While循环\n======")
+    var index = 0
+    while (index < items.size){
+        println("item at $index is ${items[index]}")
+        index++
+    }
+
+    /**
+     * when 表达式
+     */
+    println("\nwhen表达式\n======")
+    println(describe(1))
+    println(describe("Hello"))
+    println(describe(1000L))
+    println(describe(2))
+    println(describe("other"))
+
+    /**
+     * ranges范围检查
+     * in操作符
+     */
+    // 1.范围
+    println("\n"+"ranges操作\n======")
+
+    println("\n"+"范围")
+    val x1 = 10
+    val y1 = 9
+    if (x1 in 1..y1+1) {
+        println("$x1 fits in range")
+    }
+    // 2.迭代
+    println("迭代")
+    for (x in 1..5) {
+        print(x)
+    }
+    // 3.步进
+    println("\n" + "步进")
+    for (x in 1..10 step 2){
+        print(x)
+    }
+    println()
+    for (x in 9 downTo 0 step 3){
+        print(x)
+    }
+
+    /**
+     * 集合操作
+     */
+    // 1.遍历迭代
+    println("\n" + "集合操作\n======")
+    for (item in items) {
+        println(item)
+    }
+    // 2.in操作符检查集合
+    val items1 = setOf("apple","banana","kiwi")
+    when {
+        "orange" in items1 -> println("juicy")
+        "apple" in items1 -> println("apple is fine too")
+    }
+    // 3.lambda表达式 过滤和映射集合
+    val fruits = listOf("banana","avocado","apple","kiwi")
+    fruits
+            .filter { it.startsWith("a") }
+            .sortedBy { it }
+            .map { it.toUpperCase() }
+            .forEach { println(it)}
 }
 
 /**
@@ -60,3 +156,17 @@ fun func03(a: Int, b: Int): Unit {
 fun func03Void(a: Int, b: Int) {
     println(a + b)
 }
+
+// 返回值可为空
+fun parseInt(str: String): Int? {
+    return str.toIntOrNull()
+}
+
+fun describe(obj: Any): String =
+        when (obj) {
+            1 -> "One"
+            "Hello" -> "Greeting"
+            is Long -> "Long"
+            !is String -> "Not a String"
+            else -> "Unknown"
+        }
