@@ -1,7 +1,7 @@
 /**
  * lesson01 基本语法
  */
-package my.demo // 定义包名
+package `01_basic`  // 定义包名
 
 import java.awt.Rectangle
 
@@ -62,7 +62,7 @@ fun main(args: Array<String>) {
      * 类型检测及自动类型转换
      * is 运算符检测一个表达式是否某类型的一个实例
      */
-    println("====== 类型检测 ======")
+    println("====== 类型检测及自动类型转换 ======")
     println("String Length:" + getStringLength("kotlin_lesson"))
 
     /**
